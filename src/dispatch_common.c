@@ -362,7 +362,12 @@ epoxy_extension_in_string(const char *extension_list, const char *ext)
     if (!extension_list)
         return false;
     const char *ptr = extension_list;
-    size_t len = strlen(ext);
+    size_t len;
+     
+     if (!extension_list)
+        return false;
+        
+    len = strlen(ext);    
 
     /* Make sure that don't just find an extension with our name as a prefix. */
     while (true) {
